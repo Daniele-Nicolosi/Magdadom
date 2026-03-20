@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Homes</title>
+
+    <!-- Google Fonts: Cormorant (elegant titles) + Jost (clean body text)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Our style sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ========== HEADER / NAV ========== -->
+    <header class="site-header">
+        <div class="header-inner">
+            
+            <a href="index.html" class="logo">
+                <span class="logo-main">Casa Nova</span>
+                <span class="logo-sub">Vacation Homes</span>
+            </a>
+
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="#properties" class="nav-link">Properties</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <button class="hamburger" id="hamburger" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+        <nav class="mobile-nav" id="mobile-nav">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="#properties" class="mobile-nav-link">Properties</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+        </nav>
+
+    </header>
+
+
+    
+    <!-- ========== HERO / SLIDER ========== -->
+    <section class="hero" id="hero">
+
+        <!-- Contenitore delle slides - ogni div è una foto -->
+        <div class="hero-slides">
+            <div class="hero-slide active" style="background-image: url('img/slide-1.jpg')"></div>
+            <div class="hero-slide" style="background-image: url('img/slide-2.jpg')"></div>
+            <div class="hero-slide" style="background-image: url('img/slide-3.jpg')"></div>
+        </div> 
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <p class="hero-eyebrow">Welcome to our collection</p>
+            <h1 class="hero-title">Find Your<br /><em>Perfect Escape</em></h1>
+            <p class="hero-subtitle">
+               Hand-picked vacation homes in the most beautiful Italian locations,
+               each one lovingly cared for. 
+            </p>
+            <a href="#properties" class="btn btn-primary">Explore Properties</a>
+        </div>
+
+        <!-- Pallini indicatori in basso -->
+        <div class="hero-dots">
+            <button class="hero-dot active" data-index="0"></button>
+            <button class="hero-dot" data-index="1"></button>
+            <button class="hero-dot" data-index="2"></button>
+        </div> 
+
+    </section>
+
+
+    <!-- ========== INTRO STRIP ========== -->
+    <section class="intro-strip">
+        <div class="strip-item">
+            <span class="strip-icon">🏡</span>
+            <p>Unique properties</p>
+        </div>
+        <div class="strip-divider"></div>
+        <div class="strip-item">
+            <span class="strip-icon">✨</span>
+            <p>Personally managed</p>
+        </div>
+        <div class="strip-divider"></div>
+        <div class="strip-item">    
+            <span class="strip-icon">📍</span>
+            <p>Prime locations</p>
+        </div>
+        <span class="strip-divider"></span>
+        <div class="strip-item">    
+            <span class="strip-icon">📩</span>
+            <p>Easy booking</p>
+        </div>
+    </section>
+
+
+    <!-- ========== PROPERTIES ========== -->
+    <section class="properties-section" id="properties">
+        <div class="section-header">
+            <p class="section-eyebrow">Our collection</p>
+            <h2 class="section-title">Available Properties</h2>
+            <p class="section-subtitle">
+                Each home has its own character — choose the one that speaks to you.
+            </p>
+        </div>
+
+        <div class="properties-grid">
+            
+            <article class="property-card">
+                <div class="card-img-placeholder">
+                    <span>📷 Add photo here</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span class="card-location">📍 Amalfi Coast</span>
+                        <span class="card-badge">Seaside</span>
+                    </div>
+                    <h3 class="card-title">Villa Marina</h3>
+                    <p class="card-description">
+                        A stunning seafront villa with a private terrace, panoramic views
+                        of the Mediterranean, and direct access to a secluded cove.
+                    </p>
+                    <ul class="card-features">
+                        <li>3 bedrooms</li>
+                        <li>Private pool</li>
+                        <li>Sea view</li>
+                        <li>Free WiFi</li>
+                    </ul>
+                    <a href="properties/property-1.html" class="btn btn-secondary">
+                        View Property →
+                    </a>
+                </div>
+            </article>
+
+            <article class="property-card property-card--muted">
+                <div class="card-img-placeholder">
+                    <span>Coming soon</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span class="card-location">📍 Tuscany</span>
+                        <span class="card-badge">Countryside</span>
+                    </div>
+                    <h3 class="card-title">Casa Colline</h3>
+                    <p class="card-description">
+                        A charming stone farmhouse nestled in the rolling hills of Tuscany,
+                        surrounded by olive groves and vineyards.
+                    </p>
+                    <ul class="card-features">
+                        <li>4 bedrooms</li>
+                        <li>Garden</li>
+                        <li>Hill view</li>
+                        <li>Free WiFi</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary btn--disabled">Coming Soon</a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- ========== CTA ========== -->
+    <section class="cta-section">
+        <div class="cta-inner">
+            <h2 class="cta-title">Ready to book your stay?</h2>
+            <p class="cta-subtitle">
+                Get in touch — we'll help you find the perfect home for your holiday.
+            </p>
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        </div>
+    </section>
+
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-main">Casa Nova</span>
+                <p>Vacation Homes — Italy</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="properties.html">Properties</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p class="footer-copy">© 2024 Casa Nova. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
