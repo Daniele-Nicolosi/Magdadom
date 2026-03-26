@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vacation Homes</title>
 
-    <!-- Google Fonts: Cormorant (elegant titles) + Jost (clean body text)-->
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="src/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="src/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="src/favicon/site.webmanifest">
+
+    <title>Magdadom</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -13,25 +21,25 @@
         rel="stylesheet"
     >
 
-    <!-- Our style sheet -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 
 <body>
 
-    <!-- ========== HEADER / NAV ========== -->
+    <!-- ========== HEADER ========== -->
     <header class="site-header">
         <div class="header-inner">
-            
+
             <a href="index.html" class="logo">
-                <span class="logo-main">Casa Nova</span>
+                <span class="logo-main">Magdadom</span>
                 <span class="logo-sub">Vacation Homes</span>
             </a>
 
             <nav class="main-nav">
                 <a href="index.html" class="nav-link active">Home</a>
                 <a href="#properties" class="nav-link">Properties</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </nav>
 
             <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -42,68 +50,45 @@
 
         </div>
 
+        <!-- Mobile navigation -->
         <nav class="mobile-nav" id="mobile-nav">
             <a href="index.html" class="mobile-nav-link">Home</a>
             <a href="#properties" class="mobile-nav-link">Properties</a>
-            <a href="contact.html" class="mobile-nav-link">Contact</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
         </nav>
-
     </header>
 
 
-    
-    <!-- ========== HERO / SLIDER ========== -->
+    <!-- ========== HERO ========== -->
+    <!--
+        Replace the background-image URL with your actual hero photo.
+        The zoom animation will apply automatically.
+    -->
     <section class="hero" id="hero">
-
-        <!-- Contenitore delle slides - ogni div è una foto -->
-        <div class="hero-slides">
-            <div class="hero-slide active" style="background-image: url('img/slide-1.jpg')"></div>
-            <div class="hero-slide" style="background-image: url('img/slide-2.jpg')"></div>
-            <div class="hero-slide" style="background-image: url('img/slide-3.jpg')"></div>
-        </div> 
-
         <div class="hero-overlay"></div>
-
         <div class="hero-content">
             <p class="hero-eyebrow">Welcome to our collection</p>
-            <h1 class="hero-title">Find Your<br /><em>Perfect Escape</em></h1>
+            <h1 class="hero-title">Find Your<br><em>Perfect Escape</em></h1>
             <p class="hero-subtitle">
-               Hand-picked vacation homes in the most beautiful Italian locations,
-               each one lovingly cared for. 
+                Hand-picked vacation homes in the most beautiful Italian
+                locations, each one lovingly cared for.
             </p>
             <a href="#properties" class="btn btn-primary">Explore Properties</a>
         </div>
-
-        <!-- Pallini indicatori in basso -->
-        <div class="hero-dots">
-            <button class="hero-dot active" data-index="0"></button>
-            <button class="hero-dot" data-index="1"></button>
-            <button class="hero-dot" data-index="2"></button>
-        </div> 
-
     </section>
 
 
-    <!-- ========== INTRO STRIP ========== -->
-    <section class="intro-strip">
-        <div class="strip-item">
-            <span class="strip-icon">🏡</span>
-            <p>Unique properties</p>
-        </div>
-        <div class="strip-divider"></div>
-        <div class="strip-item">
-            <span class="strip-icon">✨</span>
-            <p>Personally managed</p>
-        </div>
-        <div class="strip-divider"></div>
-        <div class="strip-item">    
-            <span class="strip-icon">📍</span>
-            <p>Prime locations</p>
-        </div>
-        <span class="strip-divider"></span>
-        <div class="strip-item">    
-            <span class="strip-icon">📩</span>
-            <p>Easy booking</p>
+    <!-- ========== ABOUT ========== -->
+    <section class="about-section">
+        <div class="about-inner">
+            <p class="section-eyebrow">About us</p>
+            <h2 class="about-title">A home away from home,<br><em>in the heart of Sicily</em></h2>
+            <p class="about-text">
+                Magdadom offers carefully selected vacation homes in the most
+                beautiful corners of Sicily. Each property is personally managed
+                and lovingly maintained to make your stay as comfortable and
+                memorable as possible.
+            </p>
         </div>
     </section>
 
@@ -118,91 +103,160 @@
             </p>
         </div>
 
-        <div class="properties-grid">
-            
-            <article class="property-card">
-                <div class="card-img-placeholder">
-                    <span>📷 Add photo here</span>
-                </div>
-                <div class="card-body">
-                    <div class="card-meta">
-                        <span class="card-location">📍 Amalfi Coast</span>
-                        <span class="card-badge">Seaside</span>
-                    </div>
-                    <h3 class="card-title">Villa Marina</h3>
-                    <p class="card-description">
-                        A stunning seafront villa with a private terrace, panoramic views
-                        of the Mediterranean, and direct access to a secluded cove.
-                    </p>
-                    <ul class="card-features">
-                        <li>3 bedrooms</li>
-                        <li>Private pool</li>
-                        <li>Sea view</li>
-                        <li>Free WiFi</li>
-                    </ul>
-                    <a href="properties/property-1.html" class="btn btn-secondary">
-                        View Property →
-                    </a>
-                </div>
-            </article>
+        <!-- Carousel -->
+        <div class="carousel-wrapper">
 
-            <article class="property-card property-card--muted">
-                <div class="card-img-placeholder">
-                    <span>Coming soon</span>
+            <button class="carousel-arrow carousel-arrow--prev" id="carousel-prev">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5M12 5l-7 7 7 7"/>
+                </svg>
+            </button>
+
+            <div class="carousel-viewport">
+                <div class="carousel-track" id="carousel-track">
+
+                    <!-- Card 1 -->
+                    <article class="property-card">
+                        <div class="card-img-wrapper">
+                            <img src="src/img/property-1/photo1.jpg" alt="Casa Giardini Naxos" class="card-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <span class="card-location">&#128205; Giardini Naxos</span>
+                            </div>
+                            <h3 class="card-title">Casa Giardini Naxos</h3>
+                            <p class="card-description">
+                                A beautiful vacation home in the charming town of Giardini
+                                Naxos, with stunning views of the Sicilian coast.
+                            </p>
+                            <ul class="card-features">
+                                <li>2 Bedrooms</li>
+                                <li>1 Bathroom</li>
+                                <li>Fully Equipped Kitchen</li>
+                                <li>Private Terrace</li>
+                            </ul>
+                            <a href="src/pages/property-1.html" class="btn btn-secondary">
+                                View Property &#8594;
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="property-card">
+                        <div class="card-img-wrapper">
+                            <img src="src/img/property-2/photo1.jpg" alt="Casa Taormina" class="card-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <span class="card-location">&#128205; Taormina</span>
+                            </div>
+                            <h3 class="card-title">Casa Taormina</h3>
+                            <p class="card-description">
+                                A charming apartment in the heart of Taormina, steps away
+                                from the Greek Theatre with breathtaking views of Mount Etna.
+                            </p>
+                            <ul class="card-features">
+                                <li>1 Bedroom</li>
+                                <li>1 Bathroom</li>
+                                <li>City view</li>
+                                <li>Free WiFi</li>
+                            </ul>
+                            <a href="#" class="btn btn-secondary btn--disabled">
+                                Coming Soon &#8594;
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="property-card">
+                        <div class="card-img-wrapper">
+                             <img src="src/img/property-3/photo1.jpg" alt="Casa Siracusa" class="card-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <span class="card-location">&#128205; Siracusa</span>
+                            </div>
+                            <h3 class="card-title">Casa Siracusa</h3>
+                            <p class="card-description">
+                                An elegant home on the historic island of Ortigia, surrounded
+                                by baroque architecture and a short walk from the sea.
+                            </p>
+                            <ul class="card-features">
+                                <li>3 Bedrooms</li>
+                                <li>2 Bathrooms</li>
+                                <li>Sea view</li>
+                                <li>Air conditioning</li>
+                            </ul>
+                            <a href="#" class="btn btn-secondary btn--disabled">
+                                Coming Soon &#8594;
+                            </a>
+                        </div>
+                    </article>
+
                 </div>
-                <div class="card-body">
-                    <div class="card-meta">
-                        <span class="card-location">📍 Tuscany</span>
-                        <span class="card-badge">Countryside</span>
-                    </div>
-                    <h3 class="card-title">Casa Colline</h3>
-                    <p class="card-description">
-                        A charming stone farmhouse nestled in the rolling hills of Tuscany,
-                        surrounded by olive groves and vineyards.
-                    </p>
-                    <ul class="card-features">
-                        <li>4 bedrooms</li>
-                        <li>Garden</li>
-                        <li>Hill view</li>
-                        <li>Free WiFi</li>
-                    </ul>
-                    <a href="#" class="btn btn-secondary btn--disabled">Coming Soon</a>
-                </div>
-            </article>
+            </div>
+
+            <button class="carousel-arrow carousel-arrow--next" id="carousel-next">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
 
         </div>
+
+        <!-- Carousel dots -->
+        <div class="carousel-dots" id="carousel-dots">
+            <button class="carousel-dot active" data-index="0"></button>
+            <button class="carousel-dot" data-index="1"></button>
+            <button class="carousel-dot" data-index="2"></button>
+        </div>
+
     </section>
 
 
-    <!-- ========== CTA ========== -->
-    <section class="cta-section">
-        <div class="cta-inner">
-            <h2 class="cta-title">Ready to book your stay?</h2>
-            <p class="cta-subtitle">
-                Get in touch — we'll help you find the perfect home for your holiday.
-            </p>
-            <a href="contact.html" class="btn btn-primary">Contact Us</a>
-        </div>
-    </section>
-
-
-    <!-- ========== FOOTER ========== -->
-    <footer class="site-footer">
+    <!-- ========== FOOTER / CONTACT ========== -->
+    <footer class="site-footer" id="contact">
         <div class="footer-inner">
-            <div class="footer-brand">
-                <span class="logo-main">Casa Nova</span>
-                <p>Vacation Homes — Italy</p>
+
+            <!-- Column 1: Brand -->
+            <div class="footer-col footer-brand">
+                <span class="footer-logo">Magdadom</span>
+                <p class="footer-tagline">Vacation Homes — Sicily</p>
             </div>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="properties.html">Properties</a>
-                <a href="contact.html">Contact</a>
+
+            <!-- Column 2: Navigation -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Navigation</h4>
+                <ul class="footer-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#properties">Properties</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
-            <p class="footer-copy">© 2024 Casa Nova. All rights reserved.</p>
+
+            <!-- Column 3: Contact -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Contact Us</h4>
+                <ul class="footer-contact">
+                    <li>
+                        <span class="footer-contact-label">Phone</span>
+                        <a href="tel:+393408586344">+39 340 858 6344</a>
+                    </li>
+                    <li>
+                        <span class="footer-contact-label">Email</span>
+                        <a href="mailto:danielenicolosi03@gmail.com">danielenicolosi03@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Magdadom. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    
+    <script src="src/js/script.js"></script>
+
 </body>
 </html>
