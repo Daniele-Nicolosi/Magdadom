@@ -19,32 +19,30 @@
 
 /* ============================================================
    1. CSS VARIABLES
+   Colours inspired by the Taormina coastline:
+   deep sapphire sea, pale sky, warm cliff ochre.
    ============================================================ */
 :root {
-    /* Colors — inspired by the Taormina coastline photo */
-    --color-bg:           #eaf4fb;               /* pale sky blue — page background */
-    --color-surface:      #ffffff;               /* white — cards and panels */
-    --color-text:         #0a2240;               /* deep navy — main text */
-    --color-text-muted:   #4a6d8a;               /* muted sea blue — secondary text */
-    --color-accent:       #1260a0;               /* sapphire blue — buttons and links */
-    --color-accent-dark:  #0d4d88;               /* dark sapphire — hover state */
-    --color-accent-light: #d6eaf8;               /* pale blue — badge background */
-    --color-gold:         #c4906a;               /* warm cliff ochre — decorative accents */
-    --color-border:       #c2dff0;               /* soft blue — borders */
-    --color-hero-overlay: rgba(8, 25, 55, 0.42); /* deep navy overlay on hero image */
+    --color-bg:           #eaf4fb;               /* pale sky blue  — page background  */
+    --color-surface:      #ffffff;               /* white          — cards and panels */
+    --color-text:         #0a2240;               /* deep navy      — main text        */
+    --color-text-muted:   #4a6d8a;               /* muted sea blue — secondary text   */
+    --color-accent:       #1260a0;               /* sapphire blue  — buttons & links  */
+    --color-accent-dark:  #0d4d88;               /* dark sapphire  — hover state      */
+    --color-accent-light: #d6eaf8;               /* pale blue      — badge background */
+    --color-gold:         #c4906a;               /* cliff ochre    — decorative use   */
+    --color-border:       #c2dff0;               /* soft blue      — borders          */
+    --color-hero-overlay: rgba(8, 25, 55, 0.42); /* deep navy overlay on hero image  */
 
-    /* Typography */
     --font-display: 'Cormorant Garamond', Georgia, serif;
     --font-body:    'Jost', sans-serif;
 
-    /* Spacing scale */
-    --space-xs: 0.5rem;   /*  8px */
-    --space-sm: 1rem;     /* 16px */
-    --space-md: 2rem;     /* 32px */
-    --space-lg: 4rem;     /* 64px */
-    --space-xl: 7rem;     /* 112px */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 7rem;
 
-    /* Layout */
     --max-width:     1200px;
     --border-radius: 12px;
     --transition:    0.25s ease;
@@ -112,7 +110,6 @@ img {
     justify-content: space-between;
 }
 
-/* Logo */
 .logo {
     display: flex;
     flex-direction: column;
@@ -135,7 +132,6 @@ img {
     text-transform: uppercase;
 }
 
-/* Desktop nav links */
 .main-nav {
     display: flex;
     gap: var(--space-md);
@@ -173,7 +169,7 @@ img {
     width: 100%;
 }
 
-/* Hamburger button — hidden on desktop */
+/* Hamburger — hidden on desktop, shown on mobile */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -225,6 +221,8 @@ img {
 
 /* ============================================================
    5. HERO SECTION
+   The photo is placed on ::before so the Ken Burns zoom
+   does not affect the text content above it.
    ============================================================ */
 .hero {
     position: relative;
@@ -235,7 +233,6 @@ img {
     overflow: hidden;
 }
 
-/* Photo on ::before so the zoom doesn't affect the text */
 .hero::before {
     content: '';
     position: absolute;
@@ -252,7 +249,6 @@ img {
     to   { transform: scale(1.05); }
 }
 
-/* Dark overlay for text readability */
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -260,7 +256,6 @@ img {
     z-index: 1;
 }
 
-/* Hero text content */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -288,7 +283,7 @@ img {
     margin-bottom: var(--space-sm);
 }
 
-/* Warm ochre tint on the italic — picks up the cliff colour */
+/* Warm ochre italic — echoes the cliff tones in the photo */
 .hero-title em {
     font-style: italic;
     color: #f0c9a8;
@@ -402,19 +397,17 @@ img {
     gap: var(--space-sm);
 }
 
+/* Clips cards that are outside the visible area */
 .carousel-viewport {
     overflow: hidden;
     flex: 1;
 }
 
+/* Sliding strip — JS moves this with translateX */
 .carousel-track {
     display: flex;
-    gap: var(--space-md);
     align-items: flex-start;
-}
-
-.carousel-track .property-card {
-    flex-shrink: 0;
+    gap: var(--space-md);
 }
 
 /* Arrow buttons */
@@ -477,17 +470,19 @@ img {
 
 /* ============================================================
    9. PROPERTY CARDS
+   width: 76% leaves ~12% visible on each side as a peek.
+   min-width: 0 allows the card to shrink in flexbox so
+   text wraps correctly instead of overflowing.
    ============================================================ */
 .property-card {
+    width: 76%;
+    flex-shrink: 0;
+    min-width: 0;
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
     display: flex;
     flex-direction: column;
-    height: auto;
-    min-width: 0;
-    width: 76%;
-    flex-shrink: 0;
     box-shadow: 0 4px 20px rgba(10, 34, 64, 0.10);
     transition: transform var(--transition), box-shadow var(--transition);
 }
@@ -497,19 +492,7 @@ img {
     box-shadow: 0 24px 50px rgba(18, 96, 160, 0.20);
 }
 
-/* Image placeholder */
-.card-img-placeholder {
-    width: 100%;
-    height: 260px;
-    background: linear-gradient(135deg, #c2dff0, #9ec8e8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text-muted);
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
-}
-
+/* Image wrapper handles the zoom clip and top border-radius */
 .card-img-wrapper {
     overflow: hidden;
     border-radius: var(--border-radius) var(--border-radius) 0 0;
@@ -528,7 +511,19 @@ img {
     transform: scale(1.04);
 }
 
-/* Card body */
+/* Placeholder shown when no photo is available */
+.card-img-placeholder {
+    width: 100%;
+    height: 260px;
+    background: linear-gradient(135deg, #c2dff0, #9ec8e8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
 .card-body {
     padding: var(--space-md);
     display: flex;
@@ -536,7 +531,6 @@ img {
     gap: var(--space-xs);
     flex: 1;
     min-width: 0;
-    overflow: visible;
 }
 
 .card-meta {
@@ -576,11 +570,8 @@ img {
     line-height: 1.7;
     overflow-wrap: break-word;
     word-break: break-word;
-    white-space: normal;
-    overflow: visible;
 }
 
-/* Feature pills */
 .card-features {
     display: flex;
     flex-wrap: wrap;
@@ -596,7 +587,7 @@ img {
     border-radius: 20px;
 }
 
-/* Push button to bottom of card */
+/* Pushes the button to the bottom of the card */
 .card-body .btn {
     margin-top: auto;
     padding-top: var(--space-sm);
@@ -605,9 +596,8 @@ img {
 
 /* ============================================================
    10. FOOTER
+   Dark navy matches the deepest sea tones in the hero photo.
    ============================================================ */
-
-/* Deep navy matching the darkest sea tones in the photo */
 .site-footer {
     background-color: #071828;
     color: rgba(255, 255, 255, 0.75);
@@ -759,16 +749,17 @@ img {
 
 /* ============================================================
    12. RESPONSIVE
+   Breakpoints: 900px / 768px / 640px / 400px
    ============================================================ */
 
-/* Tablet (max 900px) */
+/* Tablet landscape */
 @media (max-width: 900px) {
-    .carousel-track .property-card {
-        min-width: 85%;
+    .property-card {
+        width: 85%;
     }
 }
 
-/* Small tablet (max 768px) */
+/* Tablet portrait */
 @media (max-width: 768px) {
     .carousel-wrapper {
         gap: var(--space-xs);
@@ -784,8 +775,8 @@ img {
         height: 16px;
     }
 
-    .carousel-track .property-card {
-        min-width: 88%;
+    .property-card {
+        width: 88%;
     }
 
     .card-img {
@@ -803,12 +794,6 @@ img {
     .card-description {
         font-size: 0.85rem;
         line-height: 1.6;
-        overflow: visible;      /* testo sempre visibile per intero */
-        display: block;         /* annulla qualsiasi troncamento */
-    }
-
-    .card-features {
-        gap: 4px;
     }
 
     .card-features li {
@@ -817,7 +802,7 @@ img {
     }
 }
 
-/* Mobile (max 640px) */
+/* Mobile */
 @media (max-width: 640px) {
     .main-nav {
         display: none;
@@ -827,12 +812,8 @@ img {
         display: flex;
     }
 
-    .carousel-track .property-card {
-        min-width: 92%;
-    }
-
-    .carousel-viewport {
-        padding: 0 var(--space-xs);
+    .property-card {
+        width: 92%;
     }
 
     .card-img {
@@ -845,15 +826,6 @@ img {
 
     .card-description {
         font-size: 0.82rem;
-        line-height: 1.6;
-        overflow: visible;
-        display: block;
-    }
-
-    .card-features {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4px;
     }
 
     .card-features li {
@@ -880,10 +852,10 @@ img {
     }
 }
 
-/* Very small mobile (max 400px) */
+/* Small mobile */
 @media (max-width: 400px) {
-    .carousel-track .property-card {
-        min-width: 96%;
+    .property-card {
+        width: 96%;
     }
 
     .carousel-arrow {
@@ -902,12 +874,10 @@ img {
 
     .card-description {
         font-size: 0.8rem;
-        overflow: visible;
-        display: block;
     }
 
     .card-features li {
-        font-size: 0.6rem;        /* ← era 0-6rem, era un typo */
+        font-size: 0.6rem;
         padding: 2px 5px;
     }
 }

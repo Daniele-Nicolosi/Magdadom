@@ -10,8 +10,6 @@
 
 /* ============================================================
    1. MOBILE MENU TOGGLE
-   Toggles the .open class on the mobile nav when the
-   hamburger button is clicked.
    ============================================================ */
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobile-nav');
@@ -23,14 +21,12 @@ hamburger.addEventListener('click', function () {
 
 /* ============================================================
    2. HEADER SHADOW ON SCROLL
-   Adds a subtle blue shadow to the header when the user
-   scrolls past 20px.
    ============================================================ */
 const header = document.querySelector('.site-header');
 
 window.addEventListener('scroll', function () {
     if (window.scrollY > 20) {
-        header.style.boxShadow = '0 4px 20px rgba(26, 133, 200, 0.12)';
+        header.style.boxShadow = '0 4px 20px rgba(18, 96, 160, 0.12)';
     } else {
         header.style.boxShadow = 'none';
     }
@@ -39,45 +35,36 @@ window.addEventListener('scroll', function () {
 
 /* ============================================================
    3. PROPERTIES CAROUSEL
-   Handles the sliding property cards with arrow buttons
-   and dot indicators. Shows a peek of adjacent cards.
+   Cards slide horizontally. Each card is 76% wide so
+   ~12% of adjacent cards are visible on each side.
    ============================================================ */
-const track       = document.getElementById('carousel-track');
-const prevBtn     = document.getElementById('carousel-prev');
-const nextBtn     = document.getElementById('carousel-next');
+const track        = document.getElementById('carousel-track');
+const prevBtn      = document.getElementById('carousel-prev');
+const nextBtn      = document.getElementById('carousel-next');
 const carouselDots = document.querySelectorAll('.carousel-dot');
 
 let currentCard = 0;
 
-// Returns all property card elements inside the track
 function getCards() {
     return track.querySelectorAll('.property-card');
 }
 
-// Moves the carousel to the correct position and updates
-// the arrow buttons and dot indicators
 function updateCarousel() {
     const cards     = getCards();
     const gap       = parseFloat(getComputedStyle(track).gap);
     const cardWidth = cards[0].offsetWidth + gap;
 
-    // Spostamento diretto — nessun offset artificiale
-    const translateX = currentCard * cardWidth;
-
-    track.style.transform  = `translateX(-${translateX}px)`;
+    track.style.transform  = `translateX(-${currentCard * cardWidth}px)`;
     track.style.transition = 'transform 0.5s ease';
 
-    // Disable arrows at the beginning and end
     prevBtn.disabled = currentCard === 0;
     nextBtn.disabled = currentCard === cards.length - 1;
 
-    // Sync dot indicators
     carouselDots.forEach(function (dot, i) {
         dot.classList.toggle('active', i === currentCard);
     });
 }
 
-// Arrow click handlers
 prevBtn.addEventListener('click', function () {
     if (currentCard > 0) {
         currentCard--;
@@ -93,7 +80,6 @@ nextBtn.addEventListener('click', function () {
     }
 });
 
-// Dot click handlers
 carouselDots.forEach(function (dot, i) {
     dot.addEventListener('click', function () {
         currentCard = i;
@@ -101,5 +87,4 @@ carouselDots.forEach(function (dot, i) {
     });
 });
 
-// Initialize on page load
 updateCarousel();
